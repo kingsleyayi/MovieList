@@ -11,7 +11,7 @@ const AuthRoute = require('./routes/auth')
 mongoose.connect(process.env.DB_URL)
 const db = mongoose.connection
 
-db.on('error',(err) => {
+db.on('error', (err) => {
     console.log(err)
 })
 
@@ -22,12 +22,12 @@ db.once('open', () => {
 const app = express()
 
 app.use(morgan('dev'))
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 const PORT = process.env.PORT || 3000
 
-app.listen(PORT, ()=> {
+app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
 })
 
