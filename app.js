@@ -8,7 +8,7 @@ dotenv.config()
 
 const MovieRoute = require('./routes/movie')
 const AuthRoute = require('./routes/auth')
-mongoose.connect(process.env.DB_URL)
+mongoose.connect(process.env.DB_URL_ATLAS)
 const db = mongoose.connection
 
 db.on('error', (err) => {
